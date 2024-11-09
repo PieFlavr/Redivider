@@ -1,15 +1,13 @@
-[gd_scene load_steps=5 format=3 uid="uid://cgem08s7e5ygg"]
+[gd_scene load_steps=6 format=3 uid="uid://cgem08s7e5ygg"]
 
+[ext_resource type="Script" path="res://scripts/player.gd" id="1_iq1q5"]
 [ext_resource type="Texture2D" uid="uid://bkemqmd31tkvv" path="res://assets/the_architect.png" id="1_l8tbe"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_f37h8"]
-size = Vector2(317, 534)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3vgyl"]
 atlas = ExtResource("1_l8tbe")
 region = Rect2(640, 0, 640, 1080)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_teule"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_dxjri"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -20,13 +18,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="player" type="Node2D"]
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2btv5"]
+radius = 64.0
+height = 256.0
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, 1)
-shape = SubResource("RectangleShape2D_f37h8")
+[node name="player" type="CharacterBody2D"]
+script = ExtResource("1_iq1q5")
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, 0)
-scale = Vector2(0.492187, 0.492187)
-sprite_frames = SubResource("SpriteFrames_teule")
+[node name="dudebro" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -62.7774)
+scale = Vector2(0.2, 0.239301)
+sprite_frames = SubResource("SpriteFrames_dxjri")
+autoplay = "default"
+
+[node name="hitbox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -64)
+rotation = 3.14159
+shape = SubResource("CapsuleShape2D_2btv5")

@@ -1,8 +1,27 @@
-[gd_scene load_steps=2 format=3 uid="uid://clek00bvrmt4e"]
+[gd_scene load_steps=4 format=3 uid="uid://clek00bvrmt4e"]
+
+[ext_resource type="PackedScene" uid="uid://cgem08s7e5ygg" path="res://scenes/player.tscn" id="1_r6y73"]
 
 [sub_resource type="TileSet" id="TileSet_2buq1"]
+
+[sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_l4jj0"]
+distance = -200.0
 
 [node name="game" type="Node2D"]
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 tile_set = SubResource("TileSet_2buq1")
+
+[node name="player" parent="." instance=ExtResource("1_r6y73")]
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+texture_filter = 1
+limit_smoothed = true
+position_smoothing_enabled = true
+position_smoothing_speed = 15.0
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+position = Vector2(0, 24)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+shape = SubResource("WorldBoundaryShape2D_l4jj0")
