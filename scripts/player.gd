@@ -32,5 +32,17 @@ func _physics_process(delta: float) -> void:
 		velocity.x = direction * SPEED
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	
+	if Input.is_action_just_pressed("shoot"):
+		shoot()
+	
 	move_and_slide()
+	
+func shoot(): 
+	print("Shooting!")
+	for bullet in get_tree().get_nodes_in_group("player_bullet"):
+		bullet.speed = 100
+		bullet.direction = (get_global_mouse_position() - bullet.global_position).normalized()
+		print(str(bullet.direction))
+			
+		
