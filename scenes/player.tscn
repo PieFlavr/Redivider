@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cgem08s7e5ygg"]
+
+[ext_resource type="Texture2D" uid="uid://bkemqmd31tkvv" path="res://assets/the_architect.png" id="1_l8tbe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f37h8"]
+size = Vector2(317, 534)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3vgyl"]
+atlas = ExtResource("1_l8tbe")
+region = Rect2(640, 0, 640, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_teule"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3vgyl")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[node name="player" type="Node2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1.5, 1)
+shape = SubResource("RectangleShape2D_f37h8")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+position = Vector2(2, 0)
+scale = Vector2(0.492187, 0.492187)
+sprite_frames = SubResource("SpriteFrames_teule")
