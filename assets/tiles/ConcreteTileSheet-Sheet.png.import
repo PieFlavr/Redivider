@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://brlpchiuq75e6"
-path="res://.godot/imported/ConcreteTileSheet-Sheet.png-838362121e7151a31ca1bdac44e54c96.ctex"
+path="res://.godot/imported/ConcreteTileSheet-Sheet.png-f572efffccf42875fae763aea1398279.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/ConcreteTileSheet-Sheet.png"
-dest_files=["res://.godot/imported/ConcreteTileSheet-Sheet.png-838362121e7151a31ca1bdac44e54c96.ctex"]
+source_file="res://assets/tiles/ConcreteTileSheet-Sheet.png"
+dest_files=["res://.godot/imported/ConcreteTileSheet-Sheet.png-f572efffccf42875fae763aea1398279.ctex"]
 
 [params]
 

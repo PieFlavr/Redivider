@@ -19,19 +19,17 @@ animations = [{
 }]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2btv5"]
-radius = 64.0
-height = 256.0
+radius = 16.0
+height = 64.0
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_iq1q5")
 
 [node name="dudebro" type="AnimatedSprite2D" parent="."]
-position = Vector2(0, -62.7774)
-scale = Vector2(0.2, 0.239301)
+scale = Vector2(0.05, 0.0598253)
 sprite_frames = SubResource("SpriteFrames_dxjri")
 autoplay = "default"
 
 [node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, -64)
 rotation = 3.14159
 shape = SubResource("CapsuleShape2D_2btv5")
