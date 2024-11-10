@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cmtapcooigpev"
-path="res://.godot/imported/GooberRunSheet.png-e751db8219a9f925b26feee9c22c64d9.ctex"
+uid="uid://ub501lruaimn"
+path="res://.godot/imported/EnemyIdleSheet.png-d46a74d292a7f597af6564f2f2c41635.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/GooberRunSheet.png"
-dest_files=["res://.godot/imported/GooberRunSheet.png-e751db8219a9f925b26feee9c22c64d9.ctex"]
+source_file="res://assets/entities/EnemyIdleSheet.png"
+dest_files=["res://.godot/imported/EnemyIdleSheet.png-d46a74d292a7f597af6564f2f2c41635.ctex"]
 
 [params]
 

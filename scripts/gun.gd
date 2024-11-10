@@ -26,7 +26,7 @@ func shoot():
 	get_tree().get_root().add_child(bullet)
 	bullet.global_position = end_position
 	bullet.direction = base_direction.rotated(rotation)
-	bullet.speed = 200
+	bullet.speed = 2000
 	print(str(bullet.direction))
 	#for bullet in get_tree().get_nodes_in_group("player_bullet"):
 	#	bullet.speed = 2000
