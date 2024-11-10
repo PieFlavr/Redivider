@@ -1,13 +1,13 @@
-CanvasModulate
 Area2D
+Node2D
+RigidBody2D
+CollisionShape2D
+CanvasModulate
 Timer
 AnimationPlayer
 RayCast2D
 Node
 CharacterBody2D
-CollisionShape2D
-RigidBody2D
-Node2D
 AnimatedSprite2D
 ParallaxBackground
 StaticBody2D

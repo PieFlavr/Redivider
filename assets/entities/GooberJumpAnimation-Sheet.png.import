@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://h5uanbftwgr7"
-path="res://.godot/imported/EnemyJumpAnimation-Sheet.png-aa3e5e55e62f05a5b8a14510001abc2b.ctex"
+uid="uid://buvxbkkrc1fgd"
+path="res://.godot/imported/GooberJumpAnimation-Sheet.png-7c8724c6d14e3d0e1f45b68c9a8ca88c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://EnemyJumpAnimation-Sheet.png"
-dest_files=["res://.godot/imported/EnemyJumpAnimation-Sheet.png-aa3e5e55e62f05a5b8a14510001abc2b.ctex"]
+source_file="res://assets/entities/GooberJumpAnimation-Sheet.png"
+dest_files=["res://.godot/imported/GooberJumpAnimation-Sheet.png-7c8724c6d14e3d0e1f45b68c9a8ca88c.ctex"]
 
 [params]
 

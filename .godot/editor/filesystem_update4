@@ -9,3 +9,14 @@ res://scripts/gun.gd
 res://scenes/canvas_modulate.gd
 res://scripts/parallax_background.gd
 res://scripts/canvas_modulate.gd
+res://scenes/projectile.tscn
+res://scripts/enemy.gd
+res://scripts/kill_zone.gd
+res://scripts/projectile.gd
+res://game_manager.gd
+res://scenes/reversible_projectile.tscn
+res://scenes/reversible_object.tscn
+res://bullet.gd
+res://scenes/player_bullet.tscn
+res://scripts/player_bullet.gd
+res://scripts/reversible_object.gd

@@ -1,0 +1,16 @@
+[gd_scene load_steps=2 format=3 uid="uid://j6nx68y7l8x5"]
+
+[ext_resource type="Script" path="res://scripts/projectile.gd" id="1_81e4s"]
+
+[node name="projectile" type="RigidBody2D"]
+disable_mode = 1
+collision_layer = 0
+collision_mask = 0
+gravity_scale = 0.0
+continuous_cd = 2
+contact_monitor = true
+max_contacts_reported = 3
+script = ExtResource("1_81e4s")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

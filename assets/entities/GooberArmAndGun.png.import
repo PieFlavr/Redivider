@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://buvxbkkrc1fgd"
-path="res://.godot/imported/GooberJumpAnimation-Sheet.png-520f50e5649d0e9bfdb9908cb92ea740.ctex"
+uid="uid://chpe0ryo53fpq"
+path="res://.godot/imported/GooberArmAndGun.png-44b5c292c74009e8362eb226e8665d95.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://GooberJumpAnimation-Sheet.png"
-dest_files=["res://.godot/imported/GooberJumpAnimation-Sheet.png-520f50e5649d0e9bfdb9908cb92ea740.ctex"]
+source_file="res://assets/entities/GooberArmAndGun.png"
+dest_files=["res://.godot/imported/GooberArmAndGun.png-44b5c292c74009e8362eb226e8665d95.ctex"]
 
 [params]
 
