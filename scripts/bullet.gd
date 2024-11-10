@@ -121,6 +121,7 @@ func reverse() -> void:
 func compute_rewind(delta : float) -> void:
 	var pos = record_values["position"].pop_back()
 	var rot = record_values["rotation"].pop_back()
+	var lin = record_values["velocity"].pop_back()
 	
 	if record_values["position"].is_empty():
 		collision_box.set_deferred("disabled",false)
@@ -129,10 +130,11 @@ func compute_rewind(delta : float) -> void:
 			global_position = pos
 		if(rot != null):
 			rotation = rot
-		if(linear_velocity != null):
-			linear_velocity = record_values["velocity"][0]
+		if(lin != null):
+			linear_velocity = lin
 		return
 		
-	rotation = rot
-	global_position = pos
+	rotation = rot if(rot != null) else rotation
+	global_position = pos if(pos != null) else global_position
+	linear_velocity = lin if(lin != null) else linear_velocity
 	
