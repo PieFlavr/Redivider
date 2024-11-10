@@ -20,3 +20,7 @@ res://bullet.gd
 res://scenes/player_bullet.tscn
 res://scripts/player_bullet.gd
 res://scripts/reversible_object.gd
+res://scenes/effect_area.tscn
+res://reversible_enemy.gd
+res://scripts/reversible_enemy.gd
+res://scenes/reversible_enemy.tscn

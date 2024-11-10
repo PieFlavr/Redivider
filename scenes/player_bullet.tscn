@@ -1,6 +1,147 @@
-[gd_scene load_steps=2 format=3 uid="uid://bwr8o2iddwl1n"]
+[gd_scene load_steps=23 format=3 uid="uid://bwr8o2iddwl1n"]
 
 [ext_resource type="Script" path="res://scripts/player_bullet.gd" id="1_4phyh"]
+[ext_resource type="PackedScene" uid="uid://bn33faumldt5c" path="res://scenes/reversible_object.tscn" id="2_lfpxf"]
+[ext_resource type="PackedScene" uid="uid://j6nx68y7l8x5" path="res://scenes/projectile.tscn" id="3_2cpi4"]
+[ext_resource type="Texture2D" uid="uid://bt3p1m4dnkm5l" path="res://assets/oppenheimerer.png" id="4_nm8ky"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0p7d"]
+size = Vector2(4, 2)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ys2sx"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(0, 0, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_516pn"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(537, 0, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_r0vjw"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(1074, 0, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pv22a"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(1611, 0, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eygnt"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(0, 716, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8lmvt"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(537, 716, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y3kwx"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(1074, 716, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qdirl"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(1611, 716, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_j7jhq"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(0, 1432, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_csqto"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(537, 1432, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_sj3s5"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(1074, 1432, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kgwa8"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(1611, 1432, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nc2as"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(0, 2148, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_f0oim"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(537, 2148, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_b0rov"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(1074, 2148, 537, 716)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7ebq"]
+atlas = ExtResource("4_nm8ky")
+region = Rect2(1611, 2148, 537, 716)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_tdmr3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ys2sx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_516pn")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_r0vjw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pv22a")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eygnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8lmvt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y3kwx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qdirl")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j7jhq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_csqto")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_sj3s5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kgwa8")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nc2as")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_f0oim")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b0rov")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c7ebq")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
 
 [node name="player_bullet" type="Node2D"]
 script = ExtResource("1_4phyh")
+
+[node name="reversible_object" parent="." instance=ExtResource("2_lfpxf")]
+
+[node name="projectile" parent="reversible_object" instance=ExtResource("3_2cpi4")]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="reversible_object/projectile"]
+shape = SubResource("RectangleShape2D_t0p7d")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="reversible_object/projectile"]
+position = Vector2(0, -7.45058e-08)
+scale = Vector2(0.0074246, 0.0027933)
+sprite_frames = SubResource("SpriteFrames_tdmr3")
+
+[connection signal="body_entered" from="reversible_object/projectile" to="." method="_on_projectile_body_entered"]
+[connection signal="body_shape_entered" from="reversible_object/projectile" to="." method="_on_projectile_body_shape_entered"]

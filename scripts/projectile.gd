@@ -4,8 +4,7 @@ extends RigidBody2D
 # By default, no gravity either!
 var doPhysics : bool = true # For manipulating the _physics_process() from outside
 
-var speed : float = Globals.proj_speed # Projectile speed
-var direction : Vector2 = Globals.proj_direction # Projectile direction (default right)
+var velocity : Vector2 = Globals.proj_speed * Globals.proj_direction
 
 const dead_zone : Vector2 = Globals.dead_zone # Area to check for "stuckness"
 var old_position : Vector2 # For "stuckness" checking
@@ -21,4 +20,12 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	if(doPhysics):
 		old_position = position # Store old position for is_stuck() checking
-		move_and_collide(direction * speed * delta) # Object actual iteration!
+		# linear_velocity = direction * speed # Object actual iteration!
+		rotation = velocity.angle()
+		move_and_collide(velocity * delta) # old iteration ofr testing
+
+func _on_body_entered(body: Node) -> void:
+	pass # Replace with function body.
+	
+func _on_body_shape_entered(body_rid: RID, body: Node, body_shape_index: int, local_shape_index: int) -> void:
+	pass # Replace with function body.

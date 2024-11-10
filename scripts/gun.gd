@@ -33,21 +33,18 @@ func _physics_process(delta: float) -> void:
 # Function to handle shooting a bullet
 func shoot(): 
 	# Preload the bullet scene and instantiate it (create a new bullet object)
-	var bullet = preload("res://scenes/bullet.tscn").instantiate()
+	var bullet = preload("res://scenes/player_bullet.tscn").instantiate()
 	
 	# Add the bullet to the "player_bullet" group or container node in the scene tree
 	get_parent().get_node("player_bullet").add_child(bullet)
 
 	# Set the bullet's direction based on the rotation of the shooting node
-	bullet.direction = base_direction.rotated(rotation)
+	bullet.velocity = 2000*base_direction.rotated(rotation)
 	
 	# Set the bullet's global position to the calculated end position
 	bullet.global_position = end_position
 	
-	# Set the bullet's speed (how fast it moves)
-	bullet.speed = 2000  # Speed value is high for quick movement
-	
-	bullet.visible = true
+	bullet.projectile.visible = true
 	
 	# Optional: This part can be used for the future  like "unshooting" bullets or adjusting their direction
 

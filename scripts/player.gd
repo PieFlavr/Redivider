@@ -53,7 +53,7 @@ func _physics_process(delta: float) -> void:
 	
 	# Adjust time scale based on idle time
 	if (Time.get_ticks_msec() / 1000.0 - last_input_time > idle_timeout):
-		Engine.time_scale = max(0.05, Engine.time_scale * redHotFactor)
+		Engine.time_scale = max(0.00001, Engine.time_scale * redHotFactor)
 	else:
 		Engine.time_scale = min(1.0, Engine.time_scale * (1 / redHotFactor))
 	
