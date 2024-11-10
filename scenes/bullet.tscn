@@ -154,6 +154,7 @@ position = Vector2(2.20221e-07, 2.99999)
 rotation = -3.14159
 scale = Vector2(2.88923, -0.0835475)
 shape = SubResource("RectangleShape2D_nuapb")
+disabled = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
 [connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

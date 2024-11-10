@@ -1,11 +1,10 @@
-[gd_scene load_steps=24 format=4 uid="uid://clek00bvrmt4e"]
+[gd_scene load_steps=23 format=4 uid="uid://clek00bvrmt4e"]
 
 [ext_resource type="Script" path="res://scripts/parallax_background.gd" id="1_bxick"]
 [ext_resource type="PackedScene" uid="uid://cgem08s7e5ygg" path="res://scenes/player.tscn" id="1_r6y73"]
 [ext_resource type="Texture2D" uid="uid://cw0nnfjcrr6ps" path="res://assets/ezgif-2-48555a8c40.png" id="1_uvvbk"]
 [ext_resource type="Texture2D" uid="uid://6tuyydgj4pi7" path="res://assets/tiles/ConcreteTileSheetPartTwo-Sheet.png" id="2_43kl4"]
 [ext_resource type="PackedScene" uid="uid://mcnbfg5dx05i" path="res://scenes/kill_zone.tscn" id="3_ay2kh"]
-[ext_resource type="PackedScene" uid="uid://i1qramd44stq" path="res://scenes/bullet.tscn" id="4_5iu3q"]
 [ext_resource type="PackedScene" uid="uid://bkyuxv4xay25w" path="res://scenes/gun.tscn" id="5_ibcgs"]
 [ext_resource type="PackedScene" uid="uid://dh1se7l7n6dgg" path="res://scenes/enemy.tscn" id="8_1mdme"]
 
@@ -172,12 +171,9 @@ position = Vector2(0, 24)
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_l4jj0")
 
+[node name="enemy" parent="." instance=ExtResource("8_1mdme")]
+position = Vector2(120, -296)
+
 [node name="enemy_bullet" type="Node" parent="."]
 
 [node name="player_bullet" type="Node" parent="."]
-
-[node name="bullet" parent="player_bullet" groups=["player_bullet"] instance=ExtResource("4_5iu3q")]
-position = Vector2(56, -264)
-
-[node name="enemy" parent="player_bullet" instance=ExtResource("8_1mdme")]
-position = Vector2(120, -256)

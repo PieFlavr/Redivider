@@ -15,3 +15,4 @@ res://scenes/gun.gd
 res://scripts/gun.gd
 res://scripts/bullet.gd
 res://scenes/enemy.tscn
+res://scenes/enemy.gd

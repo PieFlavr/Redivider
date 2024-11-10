@@ -2,7 +2,7 @@ extends Node2D
 
 var base_direction : Vector2 = Vector2(1,0)
 var end_position : Vector2
-var length = 64
+var length = 32
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	pass # Replace with function body.
@@ -21,13 +21,15 @@ func _process(delta: float) -> void:
 	
 
 func shoot(): 
-	print("Shooting!")
+	# print("Shooting!")
 	var bullet = preload("res://scenes/bullet.tscn").instantiate()
 	get_tree().get_root().add_child(bullet)
 	bullet.global_position = end_position
 	bullet.direction = base_direction.rotated(rotation)
 	bullet.speed = 2000
-	print(str(bullet.direction))
+	#print(str(bullet.direction))
+	
+	# might use later for "unshooting bullets"
 	#for bullet in get_tree().get_nodes_in_group("player_bullet"):
 	#	bullet.speed = 2000
 	#	bullet.direction = (get_global_mouse_position() - bullet.global_position).normalized()

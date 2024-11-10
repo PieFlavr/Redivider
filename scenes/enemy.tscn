@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://dh1se7l7n6dgg"]
+[gd_scene load_steps=17 format=3 uid="uid://dh1se7l7n6dgg"]
 
+[ext_resource type="Script" path="res://scenes/enemy.gd" id="1_16xkb"]
 [ext_resource type="Texture2D" uid="uid://ub501lruaimn" path="res://assets/entities/EnemyIdleSheet.png" id="1_t3r8g"]
 [ext_resource type="Texture2D" uid="uid://dmcd8k4pnx7o1" path="res://assets/entities/EnemyRunSheet.png" id="2_omayl"]
 
@@ -97,7 +98,8 @@ animations = [{
 radius = 6.0
 height = 60.0
 
-[node name="enemy" type="Node2D"]
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_16xkb")
 
 [node name="dudebro" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -107,8 +109,21 @@ animation = &"run"
 autoplay = "default"
 frame_progress = 0.0882698
 
-[node name="PersonalSpace" type="Area2D" parent="."]
-
-[node name="hitbox" type="CollisionShape2D" parent="PersonalSpace"]
+[node name="hitbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_bpk50")
+
+[node name="walk_vision" type="RayCast2D" parent="."]
+target_position = Vector2(32, 0)
+collide_with_areas = true
+
+[node name="vision_lines" type="Node" parent="."]
+
+[node name="RayCast2D" type="RayCast2D" parent="vision_lines"]
+target_position = Vector2(128, 32)
+
+[node name="RayCast2D2" type="RayCast2D" parent="vision_lines"]
+target_position = Vector2(128, -32)
+
+[node name="RayCast2D3" type="RayCast2D" parent="vision_lines"]
+target_position = Vector2(128, 0)

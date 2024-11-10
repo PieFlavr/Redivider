@@ -99,6 +99,7 @@ radius = 11.7919
 height = 38.1341
 
 [node name="player" type="CharacterBody2D"]
+z_index = 1
 script = ExtResource("1_iq1q5")
 
 [node name="dudebro" type="AnimatedSprite2D" parent="."]
