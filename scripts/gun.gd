@@ -23,7 +23,7 @@ func _process(delta: float) -> void:
 func shoot(): 
 	# print("Shooting!")
 	var bullet = preload("res://scenes/bullet.tscn").instantiate()
-	get_tree().get_root().add_child(bullet)
+	get_parent().get_node("player_bullet").add_child(bullet)
 	bullet.global_position = end_position
 	bullet.direction = base_direction.rotated(rotation)
 	bullet.speed = 2000
