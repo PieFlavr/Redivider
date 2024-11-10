@@ -1,54 +1,53 @@
-[gd_scene load_steps=17 format=3 uid="uid://cgem08s7e5ygg"]
+[gd_scene load_steps=16 format=3 uid="uid://dh1se7l7n6dgg"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_iq1q5"]
-[ext_resource type="Texture2D" uid="uid://nsainxhfcdxi" path="res://assets/GooberIdleSheet.png" id="2_gl26p"]
-[ext_resource type="Texture2D" uid="uid://cmtapcooigpev" path="res://assets/GooberRunSheet.png" id="3_ascae"]
+[ext_resource type="Texture2D" uid="uid://nsainxhfcdxi" path="res://assets/GooberIdleSheet.png" id="1_cjofv"]
+[ext_resource type="Texture2D" uid="uid://cmtapcooigpev" path="res://assets/GooberRunSheet.png" id="2_a7qb7"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_mch0s"]
-atlas = ExtResource("2_gl26p")
+atlas = ExtResource("1_cjofv")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmni6"]
-atlas = ExtResource("2_gl26p")
+atlas = ExtResource("1_cjofv")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ce352"]
-atlas = ExtResource("2_gl26p")
+atlas = ExtResource("1_cjofv")
 region = Rect2(0, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_wig3r"]
-atlas = ExtResource("3_ascae")
+atlas = ExtResource("2_a7qb7")
 region = Rect2(0, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0il5u"]
-atlas = ExtResource("3_ascae")
+atlas = ExtResource("2_a7qb7")
 region = Rect2(32, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4tlic"]
-atlas = ExtResource("3_ascae")
+atlas = ExtResource("2_a7qb7")
 region = Rect2(64, 0, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c0bf"]
-atlas = ExtResource("3_ascae")
+atlas = ExtResource("2_a7qb7")
 region = Rect2(0, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xa7kb"]
-atlas = ExtResource("3_ascae")
+atlas = ExtResource("2_a7qb7")
 region = Rect2(32, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_n3mpd"]
-atlas = ExtResource("3_ascae")
+atlas = ExtResource("2_a7qb7")
 region = Rect2(64, 64, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5r74v"]
-atlas = ExtResource("3_ascae")
+atlas = ExtResource("2_a7qb7")
 region = Rect2(0, 128, 32, 64)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_eugxh"]
-atlas = ExtResource("3_ascae")
+atlas = ExtResource("2_a7qb7")
 region = Rect2(32, 128, 32, 64)
 
-[sub_resource type="SpriteFrames" id="SpriteFrames_dxjri"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_ppeln"]
 animations = [{
 "frames": [{
 "duration": 1.0,
@@ -94,21 +93,20 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2btv5"]
-radius = 11.7919
-height = 38.1341
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_bpk50"]
+radius = 6.0
+height = 60.0
 
-[node name="player" type="CharacterBody2D"]
-script = ExtResource("1_iq1q5")
+[node name="enemy" type="Node2D"]
 
 [node name="dudebro" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
 scale = Vector2(0.969999, 1.16061)
-sprite_frames = SubResource("SpriteFrames_dxjri")
+sprite_frames = SubResource("SpriteFrames_ppeln")
 autoplay = "default"
 
-[node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
-rotation = 3.14159
-scale = Vector2(0.678435, -1.67829)
-shape = SubResource("CapsuleShape2D_2btv5")
+[node name="PersonalSpace" type="Area2D" parent="."]
+
+[node name="hitbox" type="CollisionShape2D" parent="PersonalSpace"]
+position = Vector2(0, 6)
+shape = SubResource("CapsuleShape2D_bpk50")

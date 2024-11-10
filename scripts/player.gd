@@ -27,6 +27,8 @@ func _physics_process(delta: float) -> void:
 	if is_on_floor():
 		if direction == 0:
 			dudebro.play("default")	
+		else: 
+			dudebro.play("run")
 	
 	if direction:
 		velocity.x = direction * SPEED

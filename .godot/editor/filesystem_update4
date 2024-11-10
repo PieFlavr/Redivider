@@ -13,3 +13,5 @@ res://scenes/gun.tscn
 res://scenes/parallax_background.gd
 res://scenes/gun.gd
 res://scripts/gun.gd
+res://scripts/bullet.gd
+res://scenes/enemy.tscn

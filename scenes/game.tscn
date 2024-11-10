@@ -1,4 +1,4 @@
-[gd_scene load_steps=23 format=4 uid="uid://clek00bvrmt4e"]
+[gd_scene load_steps=24 format=4 uid="uid://clek00bvrmt4e"]
 
 [ext_resource type="Script" path="res://scripts/parallax_background.gd" id="1_bxick"]
 [ext_resource type="PackedScene" uid="uid://cgem08s7e5ygg" path="res://scenes/player.tscn" id="1_r6y73"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://mcnbfg5dx05i" path="res://scenes/kill_zone.tscn" id="3_ay2kh"]
 [ext_resource type="PackedScene" uid="uid://i1qramd44stq" path="res://scenes/bullet.tscn" id="4_5iu3q"]
 [ext_resource type="PackedScene" uid="uid://bkyuxv4xay25w" path="res://scenes/gun.tscn" id="5_ibcgs"]
+[ext_resource type="PackedScene" uid="uid://dh1se7l7n6dgg" path="res://scenes/enemy.tscn" id="8_1mdme"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8j8jj"]
 atlas = ExtResource("1_uvvbk")
@@ -146,15 +147,6 @@ texture_filter = 1
 tile_map_data = PackedByteArray("AAD+//v/AgABAAEAAAD///v/AgAAAAAAAAAAAPv/AgABAAEAAAABAPv/AgAAAAAAAAACAPv/AgADAAAAAAADAPr/AgABAAIAAAAEAPn/AgABAAIAAAAFAPj/AgABAAIAAAADAPv/AgAAAAAAAAAEAPv/AgAAAAAAAAAEAPr/AgAAAAAAAAAFAPr/AgAAAAAAAAAFAPn/AgAAAAAAAAAFAPv/AgACAAAAAAD+//r/AgADAAIAAAD9//n/AgADAAIAAAD9//v/AgABAAAAAAD9//r/AgABAAAAAAD8//r/AgABAAAAAAD8//n/AgABAAAAAAD8//v/AgABAAAAAAD7//v/AgABAAAAAAD7//r/AgABAAAAAAD7//n/AgABAAAAAAAGAPj/AgABAAAAAAAGAPn/AgABAAAAAAAGAPr/AgABAAAAAAAGAPv/AgABAAAAAAAJAPv/AgADAAAAAAAJAPr/AgADAAAAAAAJAPn/AgADAAAAAAAJAPj/AgADAAAAAAAKAPj/AgADAAAAAAAKAPn/AgADAAAAAAAKAPr/AgADAAAAAAAKAPv/AgADAAAAAAALAPv/AgADAAAAAAALAPr/AgADAAAAAAALAPn/AgADAAAAAAALAPj/AgADAAAAAAA=")
 tile_set = SubResource("TileSet_2buq1")
 
-[node name="bullet" parent="." groups=["player_bullet"] instance=ExtResource("4_5iu3q")]
-position = Vector2(56, -264)
-
-[node name="bullet2" parent="." groups=["player_bullet"] instance=ExtResource("4_5iu3q")]
-position = Vector2(64, -248)
-
-[node name="bullet3" parent="." groups=["player_bullet"] instance=ExtResource("4_5iu3q")]
-position = Vector2(88, -264)
-
 [node name="gun" parent="." instance=ExtResource("5_ibcgs")]
 position = Vector2(-136, -296)
 
@@ -183,3 +175,9 @@ shape = SubResource("WorldBoundaryShape2D_l4jj0")
 [node name="enemy_bullet" type="Node" parent="."]
 
 [node name="player_bullet" type="Node" parent="."]
+
+[node name="bullet" parent="player_bullet" groups=["player_bullet"] instance=ExtResource("4_5iu3q")]
+position = Vector2(56, -264)
+
+[node name="enemy" parent="player_bullet" instance=ExtResource("8_1mdme")]
+position = Vector2(120, -256)

@@ -1,8 +1,11 @@
-[gd_scene load_steps=22 format=3 uid="uid://i1qramd44stq"]
+[gd_scene load_steps=23 format=3 uid="uid://i1qramd44stq"]
 
 [ext_resource type="Script" path="res://scripts/bullet.gd" id="1_5i0do"]
 [ext_resource type="Texture2D" uid="uid://bt3p1m4dnkm5l" path="res://assets/oppenheimerer.png" id="1_ujq4g"]
 [ext_resource type="PackedScene" uid="uid://mcnbfg5dx05i" path="res://scenes/kill_zone.tscn" id="2_fl27o"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_pwbbh"]
+size = Vector2(8, 2)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_5dipy"]
 atlas = ExtResource("1_ujq4g")
@@ -125,10 +128,16 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nuapb"]
-size = Vector2(2.7689, 23.9385)
+size = Vector2(4.15336, 71.8152)
 
-[node name="bullet" type="Node2D"]
+[node name="bullet" type="RigidBody2D"]
+z_index = 1
+gravity_scale = 0.0
 script = ExtResource("1_5i0do")
+
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(0, -1)
+shape = SubResource("RectangleShape2D_pwbbh")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-2.38419e-07, -1)
@@ -138,9 +147,13 @@ autoplay = "default"
 frame_progress = 0.82433
 
 [node name="KillZone" parent="." instance=ExtResource("2_fl27o")]
+position = Vector2(0, -4)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(3.2981e-07, -1)
+position = Vector2(2.20221e-07, 2.99999)
 rotation = -3.14159
 scale = Vector2(2.88923, -0.0835475)
 shape = SubResource("RectangleShape2D_nuapb")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]
