@@ -1,7 +1,7 @@
 [gd_scene load_steps=23 format=4 uid="uid://clek00bvrmt4e"]
 
 [ext_resource type="PackedScene" uid="uid://cgem08s7e5ygg" path="res://scenes/player.tscn" id="1_r6y73"]
-[ext_resource type="Script" path="res://scenes/canvas_modulate.gd" id="1_ss0mr"]
+[ext_resource type="Script" path="res://scripts/canvas_modulate.gd" id="1_ss0mr"]
 [ext_resource type="Texture2D" uid="uid://cw0nnfjcrr6ps" path="res://assets/ezgif-2-48555a8c40.png" id="1_uvvbk"]
 [ext_resource type="Texture2D" uid="uid://6tuyydgj4pi7" path="res://assets/tiles/ConcreteTileSheetPartTwo-Sheet.png" id="2_43kl4"]
 [ext_resource type="PackedScene" uid="uid://mcnbfg5dx05i" path="res://scenes/kill_zone.tscn" id="3_ay2kh"]

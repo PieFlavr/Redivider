@@ -5,6 +5,15 @@ const JUMP_VELOCITY = -400.0
 
 var direction : int = 0
 
+var input_activity : bool
+var mouse_moved : bool
+var last_mouse_pos : Vector2
+var last_input_time : float
+const idle_timeout : float = 0.05
+const idle_zone_factor : Vector2 = Vector2(4.0, 4.0)
+
+var redHotFactor : float = 0.95
+
 # Imma just gonna call the "rewind" chontros
 var chrontos : bool = false
 var chrontos_length : float = 10.0
@@ -33,6 +42,20 @@ func _process(delta : float) -> void:
 		reverse(true)
 	
 func _physics_process(delta: float) -> void:
+	input_activity = Input.is_action_pressed("move_left")
+	input_activity = input_activity or Input.is_action_pressed("move_right")
+	input_activity = input_activity or Input.is_action_pressed("jump")
+
+	mouse_moved = get_viewport().get_mouse_position() != last_mouse_pos
+	
+	if input_activity or mouse_moved:
+		last_input_time = Time.get_ticks_msec() / 1000.0
+	
+	if (Time.get_ticks_msec() / 1000.0 - last_input_time > idle_timeout):
+		Engine.time_scale = max(0.05,Engine.time_scale*redHotFactor)
+	else:
+		Engine.time_scale = min(1.0,Engine.time_scale*(1/redHotFactor))
+		
 	if (!Input.is_action_pressed("its_rewind_time") or !chrontos):
 		# Add the gravity.
 		if not is_on_floor():
@@ -57,6 +80,7 @@ func _physics_process(delta: float) -> void:
 		dudebro.flip_h = true
 
 	chrontos_process(delta)
+	last_mouse_pos =  get_viewport().get_mouse_position()
 		
 # Chrontos Package
 func chrontos_process(delta : float) -> void:

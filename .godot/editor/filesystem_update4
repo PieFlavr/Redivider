@@ -8,3 +8,4 @@ res://scripts/player.gd
 res://scripts/gun.gd
 res://scenes/canvas_modulate.gd
 res://scripts/parallax_background.gd
+res://scripts/canvas_modulate.gd
