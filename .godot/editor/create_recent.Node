@@ -1,13 +1,14 @@
+CanvasModulate
+Area2D
+Timer
+AnimationPlayer
 RayCast2D
 Node
 CharacterBody2D
 CollisionShape2D
 RigidBody2D
 Node2D
-Area2D
 AnimatedSprite2D
 ParallaxBackground
-Timer
 StaticBody2D
 Camera2D
-TileMapLayer

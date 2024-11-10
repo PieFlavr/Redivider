@@ -109,7 +109,7 @@ animation = &"run"
 autoplay = "default"
 frame_progress = 0.0882698
 
-[node name="hitbox" type="CollisionShape2D" parent="."]
+[node name="physbox" type="CollisionShape2D" parent="."]
 position = Vector2(0, 6)
 shape = SubResource("CapsuleShape2D_bpk50")
 

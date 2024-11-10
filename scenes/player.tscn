@@ -94,9 +94,8 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2btv5"]
-radius = 11.7919
-height = 38.1341
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gwyp1"]
+size = Vector2(20, 38.1341)
 
 [node name="player" type="CharacterBody2D"]
 z_index = 1
@@ -109,9 +108,9 @@ scale = Vector2(0.969999, 1.16061)
 sprite_frames = SubResource("SpriteFrames_dxjri")
 autoplay = "default"
 
-[node name="hitbox" type="CollisionShape2D" parent="."]
-position = Vector2(0, 8)
+[node name="CollisionBox" type="CollisionShape2D" parent="."]
+position = Vector2(-1.81899e-12, 8)
 rotation = 3.14159
 scale = Vector2(0.678435, -1.67829)
-shape = SubResource("CapsuleShape2D_2btv5")
+shape = SubResource("RectangleShape2D_gwyp1")
 one_way_collision_margin = 26.5
