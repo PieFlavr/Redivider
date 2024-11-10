@@ -4,10 +4,11 @@ extends Area2D
 
 
 func _on_body_entered(body: Node2D) -> void:
-	print("Get Destroyed Idiot!")
-	Engine.time_scale = 0.5
-	body.get_node("hitbox").queue_free()
-	timer.start()
+	if body.name == "player":
+		print("Get Destroyed Idiot!")
+		Engine.time_scale = 0.5
+		body.get_node("hitbox").queue_free()
+		timer.start()
 
 func _on_timer_timeout() -> void:
 	Engine.time_scale = 1

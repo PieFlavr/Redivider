@@ -9,3 +9,7 @@ res://bullet.tscn
 res://scenes/bullet.tscn
 res://scenes/bullet.gd
 res://scripts/kill_zone.gd
+res://scenes/gun.tscn
+res://scenes/parallax_background.gd
+res://scenes/gun.gd
+res://scripts/gun.gd

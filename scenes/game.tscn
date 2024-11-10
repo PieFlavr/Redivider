@@ -1,9 +1,90 @@
-[gd_scene load_steps=9 format=4 uid="uid://clek00bvrmt4e"]
+[gd_scene load_steps=23 format=4 uid="uid://clek00bvrmt4e"]
 
+[ext_resource type="Script" path="res://scripts/parallax_background.gd" id="1_bxick"]
 [ext_resource type="PackedScene" uid="uid://cgem08s7e5ygg" path="res://scenes/player.tscn" id="1_r6y73"]
+[ext_resource type="Texture2D" uid="uid://cw0nnfjcrr6ps" path="res://assets/ezgif-2-48555a8c40.png" id="1_uvvbk"]
 [ext_resource type="Texture2D" uid="uid://6tuyydgj4pi7" path="res://assets/tiles/ConcreteTileSheetPartTwo-Sheet.png" id="2_43kl4"]
 [ext_resource type="PackedScene" uid="uid://mcnbfg5dx05i" path="res://scenes/kill_zone.tscn" id="3_ay2kh"]
 [ext_resource type="PackedScene" uid="uid://i1qramd44stq" path="res://scenes/bullet.tscn" id="4_5iu3q"]
+[ext_resource type="PackedScene" uid="uid://bkyuxv4xay25w" path="res://scenes/gun.tscn" id="5_ibcgs"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8j8jj"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(0, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2lbd"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(1920, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24wxi"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(3840, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1gk7v"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(5760, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3qj6y"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(7680, 0, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ycpa"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(0, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6bcbm"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(1920, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_dabpm"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(3840, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_61hgb"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(5760, 1080, 1920, 1080)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nepib"]
+atlas = ExtResource("1_uvvbk")
+region = Rect2(7680, 1080, 1920, 1080)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_whdq1"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8j8jj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e2lbd")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24wxi")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1gk7v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3qj6y")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ycpa")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6bcbm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_dabpm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_61hgb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nepib")
+}],
+"loop": true,
+"name": &"default",
+"speed": 32.0
+}]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0fw0n"]
 texture = ExtResource("2_43kl4")
@@ -47,9 +128,35 @@ distance = -200.0
 
 [node name="game_manager" type="Node" parent="."]
 
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -128
+follow_viewport_enabled = true
+script = ExtResource("1_bxick")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="ParallaxBackground"]
+texture_filter = 1
+position = Vector2(-6.10352e-05, -264)
+scale = Vector2(0.455556, 0.455556)
+sprite_frames = SubResource("SpriteFrames_whdq1")
+autoplay = "default"
+frame_progress = 0.23532
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
+texture_filter = 1
 tile_map_data = PackedByteArray("AAD+//v/AgABAAEAAAD///v/AgAAAAAAAAAAAPv/AgABAAEAAAABAPv/AgAAAAAAAAACAPv/AgADAAAAAAADAPr/AgABAAIAAAAEAPn/AgABAAIAAAAFAPj/AgABAAIAAAADAPv/AgAAAAAAAAAEAPv/AgAAAAAAAAAEAPr/AgAAAAAAAAAFAPr/AgAAAAAAAAAFAPn/AgAAAAAAAAAFAPv/AgACAAAAAAD+//r/AgADAAIAAAD9//n/AgADAAIAAAD9//v/AgABAAAAAAD9//r/AgABAAAAAAD8//r/AgABAAAAAAD8//n/AgABAAAAAAD8//v/AgABAAAAAAD7//v/AgABAAAAAAD7//r/AgABAAAAAAD7//n/AgABAAAAAAAGAPj/AgABAAAAAAAGAPn/AgABAAAAAAAGAPr/AgABAAAAAAAGAPv/AgABAAAAAAAJAPv/AgADAAAAAAAJAPr/AgADAAAAAAAJAPn/AgADAAAAAAAJAPj/AgADAAAAAAAKAPj/AgADAAAAAAAKAPn/AgADAAAAAAAKAPr/AgADAAAAAAAKAPv/AgADAAAAAAALAPv/AgADAAAAAAALAPr/AgADAAAAAAALAPn/AgADAAAAAAALAPj/AgADAAAAAAA=")
 tile_set = SubResource("TileSet_2buq1")
+
+[node name="bullet" parent="." groups=["player_bullet"] instance=ExtResource("4_5iu3q")]
+position = Vector2(56, -264)
+
+[node name="bullet2" parent="." groups=["player_bullet"] instance=ExtResource("4_5iu3q")]
+position = Vector2(64, -248)
+
+[node name="bullet3" parent="." groups=["player_bullet"] instance=ExtResource("4_5iu3q")]
+position = Vector2(88, -264)
+
+[node name="gun" parent="." instance=ExtResource("5_ibcgs")]
+position = Vector2(-136, -296)
 
 [node name="player" parent="." instance=ExtResource("1_r6y73")]
 position = Vector2(0, -256)
@@ -76,6 +183,3 @@ shape = SubResource("WorldBoundaryShape2D_l4jj0")
 [node name="enemy_bullet" type="Node" parent="."]
 
 [node name="player_bullet" type="Node" parent="."]
-
-[node name="bullet" parent="player_bullet" instance=ExtResource("4_5iu3q")]
-position = Vector2(56, -264)

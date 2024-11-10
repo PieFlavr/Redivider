@@ -1,6 +1,6 @@
 [gd_scene load_steps=22 format=3 uid="uid://i1qramd44stq"]
 
-[ext_resource type="Script" path="res://scenes/bullet.gd" id="1_5i0do"]
+[ext_resource type="Script" path="res://scripts/bullet.gd" id="1_5i0do"]
 [ext_resource type="Texture2D" uid="uid://bt3p1m4dnkm5l" path="res://assets/oppenheimerer.png" id="1_ujq4g"]
 [ext_resource type="PackedScene" uid="uid://mcnbfg5dx05i" path="res://scenes/kill_zone.tscn" id="2_fl27o"]
 
@@ -135,7 +135,7 @@ position = Vector2(-2.38419e-07, -1)
 scale = Vector2(0.0148976, 0.0027933)
 sprite_frames = SubResource("SpriteFrames_2vhdp")
 autoplay = "default"
-frame_progress = 0.420941
+frame_progress = 0.82433
 
 [node name="KillZone" parent="." instance=ExtResource("2_fl27o")]
 
