@@ -34,7 +34,7 @@ func rewind_process(delta : float) -> void:
 				for child in children:
 					if(child.get(key) != null):
 						rewind_record[key].append(child.get(key))
-						print(key + "_B: " + str(child.get(key)))
+						#print(key + "_B: " + str(child.get(key)))
 			elif(self.get(key) != null):
 				rewind_record[key].append(self.get(key))
 				#print(key + "_B: " + str(rewind_record[key][-1]))
@@ -54,7 +54,7 @@ func compute_rewind() -> void:
 						for child in children:
 							if(child.get(key) != null):
 								child.set(key,value)
-								print(key + "_A " + str(value))
+								#print(key + "_A " + str(value))
 					elif(self.get(key) != null):
 						self.set(key,value)
 						#print(key + "_A " + str(value))

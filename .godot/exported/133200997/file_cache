@@ -1,0 +1,11 @@
+res://scenes/bullet.tscn::99d653e824ef0c92470dfa58ab5b00c3::1731266503::res://.godot/exported/133200997/export-6d8e6ff1e6f20a36e0402d27c623c86c-bullet.scn
+res://scenes/effect_area.tscn::c866af37d605f0d56333eb83caa3d9a5::1731266503::res://.godot/exported/133200997/export-d02780ea8a4f764b5dc4e709471f8b76-effect_area.scn
+res://scenes/enemy.tscn::6e5adadd31947f75c840e380ed198e74::1731266503::res://.godot/exported/133200997/export-a930820ec0ab16db6719aff4daa500f9-enemy.scn
+res://scenes/game.tscn::3cb06d18f02001dabcb6390da69d2db5::1731266503::res://.godot/exported/133200997/export-c2a7af834e91ff64325daddf58e45dc0-game.scn
+res://scenes/gun.tscn::08cc658a0b50a7d12a76f43b6fcd9e3b::1731266503::res://.godot/exported/133200997/export-e8b70ebe6a89c3504564097573c2ce26-gun.scn
+res://scenes/kill_zone.tscn::0aef2f440c59b8b46901579d572070ae::1731205359::res://.godot/exported/133200997/export-1cd5da8c23a7ca54aecb209d47883734-kill_zone.scn
+res://scenes/player.tscn::77c0aaa5d9bc672a417a251c6b89f95c::1731266503::res://.godot/exported/133200997/export-234fb6894ec6226e856ab7f825500d3d-player.scn
+res://scenes/player_bullet.tscn::5d4a7f39d01a5c439cca6a8681d07982::1731266503::res://.godot/exported/133200997/export-c47a30adb5d346d7dd0fa48d1be0fcd0-player_bullet.scn
+res://scenes/projectile.tscn::88cc870426d33b7de72e6374bdc3b4db::1731266503::res://.godot/exported/133200997/export-a882d3c243bffac1c7822c1c45b18505-projectile.scn
+res://scenes/reversible_enemy.tscn::48b6c1577bb3feea8ac312af10288feb::1731266503::res://.godot/exported/133200997/export-10ab256c1bd351c65edbbbd79f3632d3-reversible_enemy.scn
+res://scenes/reversible_object.tscn::db8443f713b0afbcc41dff1cb4e2d8c7::1731266503::res://.godot/exported/133200997/export-5df43db91797f9aff47b8dd51e228109-reversible_object.scn

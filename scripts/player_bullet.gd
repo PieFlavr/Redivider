@@ -12,7 +12,8 @@ var velocity = null: set = set_velocity, get = get_velocity
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
-	reversible_object.add_rewind_key("velocity")
+	reversible_object.add_rewind_key("linear_velocity")
+	projectile.collision_layer = 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
